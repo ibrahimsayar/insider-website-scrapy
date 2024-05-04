@@ -16,7 +16,8 @@ class InsiderWebsiteTest(unittest.TestCase):
     def setUpClass(cls):
         options = Options()
         options.add_argument('--window-size=1920,1080')
-        cls.driver = webdriver.Chrome(options=options)
+        options.add_argument('--headless')
+        cls.driver = webdriver.Remote('http://localhost:4444/wd/hub', options=options)
         cls.driver.get('https://useinsider.com/')
 
     def test1_check_home_page_load(self):
