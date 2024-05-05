@@ -10,7 +10,7 @@ pipeline {
                     currentBuild.displayName = 'Insider web site test'
                     currentBuild.description = 'Insider website working status test'
                 }
-                sh 'python3 --version'
+                sh 'python3 run.py'
             }
         }
     }
