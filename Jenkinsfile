@@ -1,11 +1,14 @@
 pipeline {
-    agent any
+    agent { docker { image 'python:3.12.1-alpine3.19' } }
     stages {
-        stage('version') {
-            sh 'python3 --version'
-        }
-        stage('startTest') {
-            sh 'python3 run.py'
+        stage('build') {
+            steps {
+                script {
+                    currentBuild.displayName = "Insider web site test"
+                    currentBuild.description = "Insider website working status test."
+                }
+                sh 'python --version'
+            }
         }
     }
 }
