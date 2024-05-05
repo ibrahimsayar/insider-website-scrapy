@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'BUILD_NAME', defaultValue: 'Build_Name_1', description: 'Insider website working status test')
+    }
     stages {
         stage('build') {
             steps {
