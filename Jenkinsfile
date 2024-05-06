@@ -13,11 +13,6 @@ pipeline {
                 sh 'python3 run.py'
             }
         }
-        stage('cleanup') {
-            steps {
-                sh 'docker-compose down'
-            }
-        }
     }
     post {
       success {
