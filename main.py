@@ -114,4 +114,3 @@ def run_tests():
 if __name__ == "__main__":
     success = run_tests()
     print(success)
-    exit()

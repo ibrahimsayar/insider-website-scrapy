@@ -5,9 +5,6 @@ def scale_selenium_nodes(node_count):
     command = f"docker-compose up --build --scale chrome={node_count}"
     subprocess.run(command, shell=True, check=True)
 
-    down_command = "docker-compose down"
-    subprocess.run(down_command, shell=True, check=True)
-
 
 if __name__ == "__main__":
     node_count = 1
