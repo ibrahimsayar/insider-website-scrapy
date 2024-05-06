@@ -11,7 +11,6 @@ pipeline {
                     currentBuild.description = 'Insider website working status test'
                 }
                 sh 'python3 run.py'
-                sh 'docker-compose down'
             }
         }
     }
