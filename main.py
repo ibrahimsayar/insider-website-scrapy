@@ -101,5 +101,16 @@ class InsiderWebsiteTest(unittest.TestCase):
         cls.driver.quit()
 
 
+def run_tests():
+    suite = unittest.TestLoader().loadTestsFromTestCase(InsiderWebsiteTest)
+    runner = unittest.TextTestRunner()
+    result = runner.run(suite)
+    if result.wasSuccessful():
+        return True
+    else:
+        return False
+
+
 if __name__ == "__main__":
-    unittest.main()
+    success = run_tests()
+    print(success)
