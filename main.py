@@ -108,8 +108,6 @@ def run_tests():
     runner = unittest.TextTestRunner()
     result = runner.run(suite)
     if result.wasSuccessful():
-        command = f"docker-compose down"
-        subprocess.run(command, shell=True, check=True)
         sys.exit(0)
     else:
         sys.exit(1)
