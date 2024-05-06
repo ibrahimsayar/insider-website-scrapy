@@ -10,12 +10,8 @@ pipeline {
                     currentBuild.displayName = 'Insider web site test'
                     currentBuild.description = 'Insider website working status test'
                 }
-                sh 'python3 run.py'
-            }
-        }
-        stage('Cleanup') {
-            steps {
-                sh 'python3 cleanup.py'
+                def status = sh(script: "python3 run.py", returnStatus: true)
+                echo "Return status: ${status}"
             }
         }
     }
