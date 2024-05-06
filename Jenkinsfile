@@ -11,8 +11,6 @@ pipeline {
                     currentBuild.description = 'Insider website working status test'
                 }
                 sh 'python3 run.py'
-            }
-            steps {
                 sh 'python3 clean.py'
             }
         }
