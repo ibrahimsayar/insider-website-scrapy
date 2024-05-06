@@ -10,8 +10,7 @@ pipeline {
                     currentBuild.displayName = 'Insider web site test'
                     currentBuild.description = 'Insider website working status test'
                 }
-                def status = sh(script: "python3 run.py", returnStatus: true)
-                echo "Return status: ${status}"
+                sh 'python3 run.py'
             }
         }
     }

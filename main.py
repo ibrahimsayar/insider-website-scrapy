@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 import unittest
 from selenium.webdriver.support import expected_conditions as EC
 import sys
+import subprocess
 
 
 class InsiderWebsiteTest(unittest.TestCase):
@@ -107,6 +108,8 @@ def run_tests():
     runner = unittest.TextTestRunner()
     result = runner.run(suite)
     if result.wasSuccessful():
+        command = f"docker-compose down"
+        subprocess.run(command, shell=True, check=True)
         sys.exit(0)
     else:
         sys.exit(1)
