@@ -11,16 +11,11 @@ pipeline {
                     currentBuild.description = 'Insider website working status test'
                 }
                 sh 'python3 run.py'
+                sh 'docker-compose down'
             }
         }
     }
     post {
-      always {
-        sh "curl -X POST -H 'Content-Type: application/json' -d '{\"status\": \"always\", \"build_number\": \"${BUILD_NUMBER}\"}' https://webhook.site/e2f45d29-dfe2-4f8f-9c7c-7f3bb7195dff"
-      }
-      aborted {
-        sh "curl -X POST -H 'Content-Type: application/json' -d '{\"status\": \"aborted\", \"build_number\": \"${BUILD_NUMBER}\"}' https://webhook.site/e2f45d29-dfe2-4f8f-9c7c-7f3bb7195dff"
-      }
       success {
         sh "curl -X POST -H 'Content-Type: application/json' -d '{\"status\": \"success\", \"build_number\": \"${BUILD_NUMBER}\"}' https://webhook.site/e2f45d29-dfe2-4f8f-9c7c-7f3bb7195dff"
       }
