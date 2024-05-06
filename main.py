@@ -85,7 +85,7 @@ class InsiderWebsiteTest(unittest.TestCase):
             position_department = item.find_element(By.CLASS_NAME, 'position-department').text
             position_location = item.find_element(By.CLASS_NAME, 'position-location').text
 
-            if position_department != "Quality Assurance" or position_location != "Istanbul, Turkey":
+            if position_department != "Quality Assurance" or position_location != "Istanbul, Turkeyyyyy":
                 status = False
 
         self.assertFalse(status is False, 'LOCATION_AND_DEPARTMENT_DO_NOT_MATCH')
