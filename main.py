@@ -108,9 +108,9 @@ def run_tests():
     runner = unittest.TextTestRunner()
     result = runner.run(suite)
     if result.wasSuccessful():
-        sys.exit(0)
-    else:
         sys.exit(1)
+    else:
+        sys.exit(0)
 
 
 if __name__ == "__main__":
