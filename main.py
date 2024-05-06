@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import unittest
 from selenium.webdriver.support import expected_conditions as EC
+import sys
 
 
 class InsiderWebsiteTest(unittest.TestCase):
@@ -106,11 +107,10 @@ def run_tests():
     runner = unittest.TextTestRunner()
     result = runner.run(suite)
     if result.wasSuccessful():
-        return True
+        sys.exit(0)
     else:
-        return False
+        sys.exit(1)
 
 
 if __name__ == "__main__":
-    success = run_tests()
-    print(success)
+    run_tests()

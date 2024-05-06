@@ -13,6 +13,11 @@ pipeline {
                 sh 'python3 run.py'
             }
         }
+        stage('Cleanup') {
+            steps {
+                sh 'python3 cleanup.py'
+            }
+        }
     }
     post {
       success {
