@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 import unittest
 from selenium.webdriver.support import expected_conditions as EC
 import sys
-import subprocess
 
 
 class InsiderWebsiteTest(unittest.TestCase):
